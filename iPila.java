@@ -1,14 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/**
+*@author German Garcia 15008, Jose Martinez 15163
+*@version 24.07.16
+*/
+/**
+* Universidad del Valle de Guatemala, Estructura de Datos, Seccion 20
+*/
+
 package hojadetrabajo2;
 
-/**
- *
- * @author Jose
- */
+/*Clase interfaz*/
+
 public interface iPila {
     public void push(int numero);
     public int pop();
