@@ -1,25 +1,29 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+/**
+*@author German Garcia 15008, Jose Martinez 15163
+*@version 24.07.16
+*/
+/**
+* Universidad del Valle de Guatemala, Estructura de Datos, Seccion 20
+*/
+
 package hojadetrabajo2;
 
 import java.util.Vector;
 
-/**
- *
- * @author Jose
- */
 public class Pila implements iPila{
+    
+    // Se crean los atributos 
     private Vector vector;
     private String dataText;
 
+    // Se crea el constructor
     public Pila(){
         this.vector = new Vector(0,1);
         this.dataText = "";
     }
     
+    // Se crean los setters y getters de los atributos
+
     public void setVector(Vector vector){
         this.vector = vector;
     }
@@ -36,6 +40,9 @@ public class Pila implements iPila{
         return dataText;
     }
     
+
+    // Metodo para realizar la operacion suma entre dos numeros 
+
     public void suma(){
         
         int numeroUno = pop();
@@ -48,6 +55,8 @@ public class Pila implements iPila{
         vector.addElement(suma);
         
     }
+
+    // Metodo para realizar la operacion resta entre dos numeros
     
     public void resta(){
         
@@ -56,12 +65,14 @@ public class Pila implements iPila{
         
         vector.removeAllElements();
         
-        int resta = numeroUno + numeroDos;
+        int resta = numeroUno - numeroDos;
         
         vector.addElement(resta);
         
     }
     
+    // Metodo para realizar la operacion multiplicacion de dos numeros
+
     public void multiplicacion(){
         int numeroUno = pop();
         int numeroDos = pop();
@@ -73,6 +84,7 @@ public class Pila implements iPila{
         vector.addElement(mul);
     }
     
+    // Metodo para realizar la division entre dos numeros
     public void division(){
         int numeroUno = pop();
         int numeroDos = pop();
@@ -83,7 +95,13 @@ public class Pila implements iPila{
         
         vector.addElement(div);
     }
+
+
     
+    // Metodo para verificacion de contenido, verifica los signos de las operaciones
+    // con lo cual al encontrar el signo indicado realiza los metodos asignados para
+    // cada operacion, como tambien verifica si hay numeros. Con lo cual se realiza en
+    // total la operacion asignada por el .text en formato postfix
     public int leerTexto(String operacion){
         
         String dataText = operacion;
@@ -119,17 +137,24 @@ public class Pila implements iPila{
         return resultado;
     }
     
+    // toString
     @Override
     public String toString(){
         
         return "a";
     }
 
+
+    // Metodo encargado de realizar el push de la linea en formato postfix leida, lo cual es cuando se
+    // encuentra un operando
     @Override
     public void push(int numero) {
         vector.addElement(numero);
     }
 
+    
+    // Metodo encargado de realizar el pop de la linea en formato postfix leida
+    // se realiza cuando hay dos operandos
     @Override
     public int pop() {
         
